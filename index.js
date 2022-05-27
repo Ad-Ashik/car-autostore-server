@@ -20,7 +20,7 @@ async function run() {
         const reviewCollection = client.db("autoStore").collection("review");
 
 
-        // get all products data
+        // get all data
         app.get('/products', async (req, res) => {
             const query = {};
             const result = await productCollection.find(query).toArray();
@@ -28,12 +28,18 @@ async function run() {
 
         });
 
-        // add product id
         app.get('/products/:id', async (req, res) => {
             const id = req.params.id;
             const query = { _id: ObjectId(id) };
             const result = await productCollection.findOne(query);
             res.send(result)
+        });
+
+        // show review
+        app.get('/review', async (req, res) => {
+            const query = {};
+            const result = await reviewCollection.find(query).toArray();
+            res.send(result);
         });
 
         // Add review
