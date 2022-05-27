@@ -20,7 +20,7 @@ async function run() {
         const reviewCollection = client.db("autoStore").collection("review");
 
 
-        // get all data
+        // get all products data
         app.get('/products', async (req, res) => {
             const query = {};
             const result = await productCollection.find(query).toArray();
