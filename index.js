@@ -70,7 +70,7 @@ async function run() {
 }
 run().catch(console.dir);
 
-
+// server check
 app.get('/', (req, res) => {
     res.send('welcome to AutoStore Home page')
 });
