@@ -52,7 +52,7 @@ async function run() {
             res.send(result)
         });
 
-        // show review
+        // show reviews
         app.get('/review', async (req, res) => {
             const query = {};
             const result = await reviewCollection.find(query).toArray();
